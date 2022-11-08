@@ -1,6 +1,6 @@
 # ---- GitHub文件源配置 ----
 # GitHub用户名(不是昵称), 注意大小写
-GitHubUserName: "first19326"
+GitHubUserName: "wqeeqw"
 # GitHub主题仓库名称
 GitHubRepositories: "Hexo-LiveForCode"
 
@@ -231,7 +231,7 @@ MenuLink:
   -
     name: "GitHub"
     icon: "icon-github"
-    href: "https://github.com/first19326"
+    href: "https://github.com/eqwwqe"
     class: ""
     target: "_blank"
     image: ""
