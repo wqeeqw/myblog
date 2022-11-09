@@ -7,7 +7,7 @@ GitHubRepositories: "Hexo-LiveForCode"
 
 # ---- 基础信息配置 ----
 # 博主名称, 文章后缀和主页图片上都会使用此名称
-User: "Live For Code"
+User: "Stars"
 # 用户头像URL
 UserAvatar: "/image/sidebar/avatar.jpg"
 # 创建时间
@@ -16,7 +16,7 @@ WebsiteStartDate: "2020-01-01"
 
 # ---- 网站配置 ----
 # 当前页失去焦点, 页面Title显示文字
-WebsiteTitleBlur: "(◍´꒳`◍) Hi, Live For Code"
+WebsiteTitleBlur: "(◍´꒳`◍) Hi, Stars"
 # 当前页失去焦点, 页面Title变化, 延时时间, 单位毫秒
 WebsiteTitleBlurTimeOut: 500
 # 当前页获取焦点, 页面Title显示文字, 显示后延时恢复原Title

@@ -4,8 +4,6 @@ comments: true
 tags: Hexo
 categories: Web
 description: Hexo主题LiveForCode介绍.
-sticky: 10000
-abbrlink: 1112885395
 date: 2020-08-01 00:00:00
 from:
 url:
