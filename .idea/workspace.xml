@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76aaa028-0525-482f-9099-565e4ae00f7b" name="Changes" comment="">
+    <list default="true" id="76aaa028-0525-482f-9099-565e4ae00f7b" name="Changes" comment="wordpress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2021/11/09/破解版phpstorm-md/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2021/11/09/破解版phpstorm-md/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2020/10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2020/10/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2020/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2020/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2021/11/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2021/11/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2021/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2021/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/wordpress-格式化标题.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/wordpress-格式化标题.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +45,23 @@
       <workItem from="1668051463874" duration="3170000" />
       <workItem from="1668483319996" duration="401000" />
       <workItem from="1668510403080" duration="319000" />
-      <workItem from="1668510743809" duration="358000" />
+      <workItem from="1668510743809" duration="1189000" />
     </task>
+    <task id="LOCAL-00001" summary="wordpress">
+      <created>1668511186674</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668511186674</updated>
+    </task>
+    <task id="LOCAL-00002" summary="wordpress">
+      <created>1668511251075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668511251075</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="wordpress" />
+    <option name="LAST_COMMIT_MESSAGE" value="wordpress" />
   </component>
 </project>

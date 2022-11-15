@@ -1,13 +1,9 @@
 ---
-title: 'wordpress:格式化标题'
-date: 2022-11-15 19:10:32
+title: wordpress-格式化标题
 tags: wordpress
-title: 四年精华PHP技术文章整理合集--PHP框架篇
 date: 2020-10-09 18:40:59
-tags: PHP框架
-comments: true
 categories: PHP框架
-description: 四年精华PHP技术文章整理合集--PHP框架篇
+description: wordpress格式化标题
 author: Stars
 about: PHP框架
 avatar: "/image/sidebar/avatar.jpg"
