@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            归档
+            wordpress-格式化标题
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -31,15 +31,36 @@
 <meta name="generator" content="Hexo 5.4.2"></head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/archive.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">归档</h1>
+                <h1 class="header-subtitle">wordpress-格式化标题</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2020-10-09
+                        </span>
+                        
+                            <span id="/2020/10/09/wordpress-格式化标题/" class="leancloud_visitors" data-flag-title="wordpress-格式化标题">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2020/10/09/wordpress-格式化标题/"></span>
+                        </span>  
+                    </p>
+                    
+                        
+                            <span class="category-color">PHP框架</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">wordpress</span>
+                        
+                    
                 </div>
             
         </div>
@@ -48,37 +69,70 @@
 </div>
 <div id="container">
     
-        
-            <!-- 归档页面、分类归档页面、标签归档页面 -->
-            <div class="articles">
-                <div class="articles-wrap">
-                    <span class="archive-move-on"></span>
-                    <span class="archive-counter">
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h2 id="页面使用"><a href="#页面使用" class="headerlink" title="页面使用"></a>页面使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;?php wp_title(&#x27;-&#x27;,true,&#x27;right&#x27;);?&gt;&lt;/title&gt;</span><br><span class="line">   ......</span><br></pre></td></tr></table></figure>
+
+<h2 id="functions-php-使用"><a href="#functions-php-使用" class="headerlink" title="functions.php 使用"></a>functions.php 使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">&lt;?php </span><br><span class="line">    /**</span><br><span class="line">    * 想要wp_title()函数实现，访问首页显示“站点标题-站点副标题”</span><br><span class="line">    * 如果存在翻页且正方的不是第1页，标题格式“标题-第2页”</span><br><span class="line">    * 当使用短横线-作为分隔符时，会将短横线转成字符实体&amp;#8211;</span><br><span class="line">    * 而我们不需要字符实体，因此需要替换字符实体</span><br><span class="line">    * wp_title()函数显示的内容，在分隔符前后会有空格，也要去掉</span><br><span class="line">    */</span><br><span class="line">    add_filter(&#x27;wp_title&#x27;, &#x27;lingfeng_wp_title&#x27;, 10, 2);</span><br><span class="line">    function lingfeng_wp_title($title, $sep) &#123;</span><br><span class="line">        global $paged, $page;</span><br><span class="line">    </span><br><span class="line">        //如果是feed页，返回默认标题内容</span><br><span class="line">        if ( is_feed() ) &#123; </span><br><span class="line">            return $title;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        // 标题中追加站点标题</span><br><span class="line">        $title .= get_bloginfo( &#x27;name&#x27; );</span><br><span class="line">    </span><br><span class="line">        // 网站首页追加站点副标题</span><br><span class="line">        $site_description = get_bloginfo( &#x27;description&#x27;, &#x27;display&#x27; );</span><br><span class="line">        if ( $site_description &amp;&amp; ( is_home() || is_front_page() ) )</span><br><span class="line">            $title = &quot;$title $sep $site_description&quot;;</span><br><span class="line">    </span><br><span class="line">        // 标题中显示第几页</span><br><span class="line">        if ( $paged &gt;= 2 || $page &gt;= 2 )</span><br><span class="line">            $title = &quot;$title $sep &quot; . sprintf( &#x27;第%s页&#x27;, max( $paged, $page ) );</span><br><span class="line">    </span><br><span class="line">        //去除空格，-的字符实体</span><br><span class="line">        $search = array(&#x27;&amp;#8211;&#x27;, &#x27; &#x27;);</span><br><span class="line">        $replace = array(&#x27;-&#x27;, &#x27;&#x27;);</span><br><span class="line">        $title = str_replace($search, $replace, $title);</span><br><span class="line">    </span><br><span class="line">        return $title;  </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Stars">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Stars
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2020/10/09/wordpress-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E9%A2%98/" target="_blank">wordpress-格式化标题</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>PHP框架
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
                         
-                            目前共计 3 篇日志，继续加油！
+                            <a href="/categories/PHP%E6%A1%86%E6%9E%B6/">PHP框架</a>
                         
-                    </span>
+                    </div>
+                
+                
+                    <div class="tag">
+                        标签：
+                        
+                            <a href="/tags/wordpress/">wordpress</a>
+                        
+                    </div>
+                
+                <div class="article-prev-next">
                     
+                        <a href="/2020/10/10/6%E5%B9%B4%E7%B2%BE%E5%8D%8EPHP%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86%E5%90%88%E9%9B%86-PHP%E6%A1%86%E6%9E%B6%E7%AF%87/" class="prev-prefix">« </a> 上一篇：    <a href="/2020/10/10/6%E5%B9%B4%E7%B2%BE%E5%8D%8EPHP%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86%E5%90%88%E9%9B%86-PHP%E6%A1%86%E6%9E%B6%E7%AF%87/" title="发布于 2020-10-10 11:40">四年精华PHP技术文章整理合集--PHP框架篇</a>
+                        <br>
                     
-                        
-                            <div class="archive-title">
-                                <h2 class="archive-year">2022</h2>
-                            </div>
-                            
-                           
-                        <div class="article">
-                            <div class="article-header">
-                                <h1 class="article-title"><a href="/2022/11/15/wordpress-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E9%A2%98/"><span>wordpress:格式化标题</span></a></h1>
-                                <div class="article-meta">
-                                    <span class="article-time">11-15</span>
-                                </div>
-                            </div>
-                        </div>
                     
                 </div>
             </div>
             
+    <div class="article-comments">
         
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
     
 </div>
     <div id="footer"></div>
@@ -110,7 +164,7 @@
                     
                         <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
                     
-                        <li class=" active "><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
+                        <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
                     
                         <li class=""><a href="/donate" class="" target="_self"><span class="iconfont icon-heart-fill"></span>赞赏</a></li>
                     

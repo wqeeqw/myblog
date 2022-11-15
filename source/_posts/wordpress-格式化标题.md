@@ -3,7 +3,7 @@ title: wordpress-格式化标题
 tags: wordpress
 date: 2020-10-09 18:40:59
 categories: PHP框架
-description: wordpress格式化标题
+description: wordpress-格式化标题
 author: Stars
 about: PHP框架
 avatar: "/image/sidebar/avatar.jpg"
