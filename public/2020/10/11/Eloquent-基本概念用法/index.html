@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>
         
-            标签
+            Eloquent-基本概念用法
         
     </title>
     <link rel="shortcut icon" href="#"/>
@@ -31,15 +31,36 @@
 <meta name="generator" content="Hexo 5.4.2"></head>
 <body>
     <a id="cover"></a>
-    <link type="text/css" rel="stylesheet" href="/css/page.css">
+    <link type="text/css" rel="stylesheet" href="/css/post.css">
 <div id="header" class="header">
     <div class="vertical">
         <div class="inner">
             
-                <h1 class="header-subtitle">标签</h1>
+                <h1 class="header-subtitle">Eloquent-基本概念用法</h1>
                 <div class="header-subinfo">
-                    <p class="article-info-text Chinese"></p>
-                    <p class="article-info-text English"></p>                  
+                    <p class="article-info-text">
+                        <span>
+                            <i class="iconfont icon-time"></i> 发表时间：2020-10-11
+                        </span>
+                        
+                            <span id="/2020/10/11/Eloquent-基本概念用法/" class="leancloud_visitors" data-flag-title="Eloquent-基本概念用法">
+                                <i class="iconfont icon-browse"></i> 阅读：<sapn class="leancloud-visitors-count"></span>
+                            </span>
+                        
+                        <span>
+                            <i class="iconfont icon-interactive"></i> 评论：<span class="valine-comment-count" data-xid="/2020/10/11/Eloquent-基本概念用法/"></span>
+                        </span>  
+                    </p>
+                    
+                        
+                            <span class="category-color">PHP框架</span>
+                        
+                    
+                    
+                        
+                            <span class="tag-color">laravel</span>
+                        
+                    
                 </div>
             
         </div>
@@ -48,22 +69,79 @@
 </div>
 <div id="container">
     
-        <!-- 独立页面 -->
-        
-            <div class="tags">
-                <div class="tags-title">
-                    目前共计 4 个标签
-                </div>
-                <div class="tags-content">
-                    <div class="tags-light">
-                        <a href="/tags/PHP%E6%A1%86%E6%9E%B6/" style="font-size: 12px; color: #ccc">PHP框架</a> <a href="/tags/laravel/" style="font-size: 12px; color: #ccc">laravel</a> <a href="/tags/wordpress/" style="font-size: 12px; color: #ccc">wordpress</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 12px; color: #ccc">工具</a>
+        <!-- 文章页面 -->
+        <div id="article">
+            <div class="toc"></div>
+            <div class="article-body">
+                <h2 id="什么是-Elopquent"><a href="#什么是-Elopquent" class="headerlink" title="什么是 Elopquent"></a>什么是 Elopquent</h2><p>Eloquent 是 Laravel 的 ‘ORM’，即 ‘Object Relational Mapping’，对象关系映射。ORM 的出现是为了帮我们把对数据库的操作变得更加地方便Eloquent 让一个 ‘Model类’ 对应一张数据库表，并且在底层封装了很多 ‘function’，可以让 Model 类非常方便地调用。没错，Eloquent 就是这么屌炸天，只需要继承一下 Eloquent 类，就可以干 ‘first() find() where() orderBy()’ 等非常非常多的事情，这就是面向对象的强大威力。</p>
+<h2 id="Eloquent的基本语法"><a href="#Eloquent的基本语法" class="headerlink" title="Eloquent的基本语法"></a>Eloquent的基本语法</h2><h3 id="找到-id-为-2-的文章打印其标题"><a href="#找到-id-为-2-的文章打印其标题" class="headerlink" title="找到 id 为 2 的文章打印其标题"></a>找到 id 为 2 的文章打印其标题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$article = Article::find(2);</span><br><span class="line"></span><br><span class="line">echo $article-&gt;title;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="查找标题为“我是标题”的文章，并打印-id"><a href="#查找标题为“我是标题”的文章，并打印-id" class="headerlink" title="查找标题为“我是标题”的文章，并打印 id"></a>查找标题为“我是标题”的文章，并打印 id</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$article = Article::where(&#x27;title&#x27;, &#x27;我是标题&#x27;)-&gt;first();</span><br><span class="line"></span><br><span class="line">echo $article-&gt;id;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="查询出所有文章并循环打印出所有标题"><a href="#查询出所有文章并循环打印出所有标题" class="headerlink" title="查询出所有文章并循环打印出所有标题"></a>查询出所有文章并循环打印出所有标题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$articles = Article::all(); // 此处得到的 $articles 是一个对象集合，可以在后面加上 &#x27;-&gt;toArray()&#x27; 变成多维数组。</span><br><span class="line"></span><br><span class="line">foreach ($articles as $article) &#123;</span><br><span class="line"></span><br><span class="line">     echo $article-&gt;title;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="查找-id-在-10-20-之间的所有文章并打印所有标题"><a href="#查找-id-在-10-20-之间的所有文章并打印所有标题" class="headerlink" title="查找 id 在 10~20 之间的所有文章并打印所有标题"></a>查找 id 在 10~20 之间的所有文章并打印所有标题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$articles = Article::where(&#x27;id&#x27;, &#x27;&gt;&#x27;, 10)-&gt;where(&#x27;id&#x27;, &#x27;&lt;&#x27;, 20)-&gt;orderBy(&#x27;updated_at&#x27;, &#x27;desc&#x27;)-&gt;get();   </span><br><span class="line">foreach ($articles as $article) &#123;</span><br><span class="line"></span><br><span class="line">     echo $article-&gt;title;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="基础使用要点"><a href="#基础使用要点" class="headerlink" title="基础使用要点:"></a>基础使用要点:</h3><p>1.每一个继承了 Eloquent 的类都有两个 ‘固定用法’ ‘Article::find($number)’ ‘Article::all()’，前者会得到一个带有数据库中取出来值的对象，后者会得到一个包含整个数据库的对象合集。<br>2.所有的中间方法如 ‘where()’ ‘orderBy()’ 等都能够同时支持 ‘静态’ 和 ‘非静态链式’ 两种方式调用，即 ‘Article::where()…’ 和 ‘Article::….-&gt;where()’。<br>3.所有的 ‘非固定用法’ 的调用最后都需要一个操作来 ‘收尾’.：’-&gt;get()’ 和 ‘-&gt;first()’。</p>
+
+                
+                <p class="end">__END__</p>
+            </div>
+            <div class="article-footer">
+                <div class="suffix-box">
+    <div class="suffix-box-left">
+        <img src="/image/sidebar/avatar.jpg" alt="Stars">
+    </div>
+    <div class="suffix-box-right">
+        <span class="suffix-box-title">文章作者：</span>Stars
+        <br>
+        <span class="suffix-box-title">文章出处：</span><a href="/2020/10/11/Eloquent-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%94%A8%E6%B3%95/" target="_blank">Eloquent-基本概念用法</a>
+        <br>
+        <span class="suffix-box-title">作者签名：</span>PHP框架
+        <br>
+        <span class="suffix-box-title">关于主题：</span><a href="https://github.com/first19326/Hexo-LiveForCode" target="_blank">Hexo - Live For Code</a>
+        <br>
+        <span class="suffix-box-title">版权声明：</span>文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议，转载请注明出处
+        <br>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+                
+                    <div class="category">
+                        分类：
+                        
+                            <a href="/categories/PHP%E6%A1%86%E6%9E%B6/">PHP框架</a>
+                        
                     </div>
-                    <div class="tags-dark">
-                        <a href="/tags/PHP%E6%A1%86%E6%9E%B6/" style="font-size: 12px; color: #666">PHP框架</a> <a href="/tags/laravel/" style="font-size: 12px; color: #666">laravel</a> <a href="/tags/wordpress/" style="font-size: 12px; color: #666">wordpress</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 12px; color: #666">工具</a>
+                
+                
+                    <div class="tag">
+                        标签：
+                        
+                            <a href="/tags/laravel/">laravel</a>
+                        
                     </div>
+                
+                <div class="article-prev-next">
+                    
+                        <a href="/2021/11/09/%E7%A0%B4%E8%A7%A3%E7%89%88phpstorm-md/" class="prev-prefix">« </a> 上一篇：    <a href="/2021/11/09/%E7%A0%B4%E8%A7%A3%E7%89%88phpstorm-md/" title="发布于 2021-11-09 11:54">破解版phpstorm</a>
+                        <br>
+                    
+                    
+                        <a href="/2020/10/10/6%E5%B9%B4%E7%B2%BE%E5%8D%8EPHP%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86%E5%90%88%E9%9B%86-PHP%E6%A1%86%E6%9E%B6%E7%AF%87/" class="next-prefix">» </a> 下一篇：    <a href="/2020/10/10/6%E5%B9%B4%E7%B2%BE%E5%8D%8EPHP%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E6%95%B4%E7%90%86%E5%90%88%E9%9B%86-PHP%E6%A1%86%E6%9E%B6%E7%AF%87/" title="发布于 2020-10-10 11:40">四年精华PHP技术文章整理合集--PHP框架篇</a>
+                    
                 </div>
             </div>
+            
+    <div class="article-comments">
         
+            <div class="comments-title">
+                评论列表
+            </div>
+        
+        <div class="comments-content"></div>
+    </div>
+
+        </div>
     
 </div>
     <div id="footer"></div>
@@ -93,7 +171,7 @@
                     
                         <li class=""><a href="/category" class="" target="_self"><span class="iconfont icon-folder-fill"></span>分类</a></li>
                     
-                        <li class=" active "><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
+                        <li class=""><a href="/tag" class="" target="_self"><span class="iconfont icon-discount-fill"></span>标签</a></li>
                     
                         <li class=""><a href="/archive" class="" target="_self"><span class="iconfont icon-calendar-fill"></span>归档</a></li>
                     
