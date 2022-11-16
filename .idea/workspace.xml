@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76aaa028-0525-482f-9099-565e4ae00f7b" name="Changes" comment="wordpress">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/6年精华PHP技术文章整理合集-PHP框架篇.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/6年精华PHP技术文章整理合集-PHP框架篇.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,7 @@
       <workItem from="1668483319996" duration="401000" />
       <workItem from="1668510403080" duration="319000" />
       <workItem from="1668510743809" duration="2409000" />
-      <workItem from="1668582830234" duration="1417000" />
+      <workItem from="1668582830234" duration="1802000" />
     </task>
     <task id="LOCAL-00001" summary="wordpress">
       <created>1668511186674</created>
